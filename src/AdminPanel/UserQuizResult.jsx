@@ -41,7 +41,7 @@ const UserQuizResult = () => {
               ))
             ) : (
               <div className="bg-success text-white m-3 p-3">
-                <h1> You have not taken any Quiz</h1>
+                <h1> User not take any Quiz</h1>
               </div>
             )}
           </div>

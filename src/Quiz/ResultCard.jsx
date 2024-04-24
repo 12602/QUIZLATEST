@@ -25,7 +25,7 @@ const ResultCard = ({ result }) => {
   return (
     <MDBCol>
       <MDBCard
-        style={{ width: 500, backgroundColor: "pink", color: "white" }}
+        style={{ width: 500, backgroundColor: "black", color: "white" }}
         className="p-3 mt-3 text-center ms-2"
       >
         <MDBRipple
@@ -41,24 +41,16 @@ const ResultCard = ({ result }) => {
           </a>
         </MDBRipple>
         <MDBCardBody>
-          <MDBCardTitle>Quiz Category:{cat}</MDBCardTitle>
+          <MDBCardTitle className="text-uppercase">{cat}</MDBCardTitle>
           <hr style={{ height: "1rem", backgroundColor: "pink" }} />
           <MDBCardText>
             {/* Some quick example text to build on the card title and make up the
           bulk of the card's content. */}
 
-            <h3 style={{ color: " #A9A9A9", fontSize: "2rem" }}>
-              {" "}
-              Total Question:10
-            </h3>
-            <h3 style={{ color: "#141010", fontSize: "2rem" }}>
-              Correct Answer :{score}
-            </h3>
-            <h3 style={{ color: "#680747", fontSize: "2rem" }}>
-              {" "}
-              Percentage:{percentage} %
-            </h3>
-            <h2 className="text-dark">{message}</h2>
+            <h3 style={{ fontSize: "2rem" }}> Total Question:10</h3>
+            <h3 style={{ fontSize: "2rem" }}>Correct Answer :{score}</h3>
+            <h3 style={{ fontSize: "2rem" }}> Percentage:{percentage} %</h3>
+            <h2>{message}</h2>
           </MDBCardText>
         </MDBCardBody>
       </MDBCard>

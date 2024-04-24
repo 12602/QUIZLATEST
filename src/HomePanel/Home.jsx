@@ -21,7 +21,7 @@ const Home = () => {
       ) : (
         <div className="text-center mt-5">
           {categories.length > 0 && (
-            <h4 className="text-danger bg-secondary p-2">
+            <h4 className="text-white bg-secondary p-2">
               Select your Favorite Category
             </h4>
           )}

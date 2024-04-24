@@ -39,8 +39,8 @@ function Login() {
           />
         </MDBCol>
 
-        <MDBCol col="4" md="6" className="">
-          <h4 className="text-center m-3 p-3 heading">Login Now</h4>
+        <MDBCol col="4" md="6" className="bg-dark p-3">
+          <h4 className="text-center m-3 p-3 heading">Login to Quiziz</h4>
           <MDBInput
             wrapperClass="mb-4"
             label="Email address"
@@ -50,7 +50,7 @@ function Login() {
             name="email"
             value={formData.email}
             onChange={onChange}
-            className="bg-white text-danger"
+            className="bg-white text-danger mt-5"
           />
           <MDBInput
             wrapperClass="mb-4"

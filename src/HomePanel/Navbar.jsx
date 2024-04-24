@@ -1,47 +1,25 @@
-import React, { useContext, useEffect, useState } from "react";
-import {
-  MDBNavbar,
-  MDBContainer,
-  MDBIcon,
-  MDBNavbarNav,
-  MDBNavbarItem,
-  MDBNavbarLink,
-  MDBNavbarToggler,
-  MDBCollapse,
-  MDBDropdown,
-  MDBDropdownMenu,
-  MDBDropdownToggle,
-  MDBDropdownItem,
-  MDBNavbarBrand,
-} from "mdb-react-ui-kit";
-import { Link } from "react-router-dom";
-import { UserContext } from "../AppContext/context/UserContext";
+import React, { useContext, useState } from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../AppContext/context/UserContext';
+import { FaBars } from "react-icons/fa";
+const NewNavbar = () => {
+  const [expanded, setExpanded] = useState(false);
+ const { user } = useContext(UserContext);
+  const handleToggle = () => {
+    setExpanded(!expanded);
+  };
 
-export default function Navbar() {
-  const [openNavRight, setOpenNavRight] = useState(false);
-  const { user } = useContext(UserContext);
-  console.log(user);
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark myNavbar fixed-top">
-      <Link className="navbar-brand ms-5 " to="/">
-        Quizzer
-      </Link>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon" />
-      </button>
-      <div
-        className="collapse navbar-collapse justify-content-end"
-        id="navbarSupportedContent"
-      >
-        <ul className="navbar-nav">
+    <Navbar expanded={expanded} expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="#home">Quiziz</Navbar.Brand>
+        <Navbar.Toggle onClick={handleToggle} aria-controls="responsive-navbar-nav" >
+          <FaBars/>
+        </Navbar.Toggle>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ml-auto">
+             <ul className="navbar-nav">
           {user && user?.isAdmin == false ? (
             <>
               <li className="nav-item active">
@@ -50,10 +28,16 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link text-white p-2" to="/chatgpt">
+                  Learn Now
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link text-white p-2" to="/result">
                   My Results
                 </Link>
               </li>
+              
               <li>
                 {" "}
                 <Link className="nav-link text-white p-2" to="/profile">
@@ -82,7 +66,11 @@ export default function Navbar() {
             </>
           )}
         </ul>
-      </div>
-    </nav>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
-}
+};
+
+export default NewNavbar;

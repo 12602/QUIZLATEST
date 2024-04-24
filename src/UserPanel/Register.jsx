@@ -38,22 +38,22 @@ function Register() {
           />
         </MDBCol>
 
-        <MDBCol col="4" md="6">
-          <h4 className="text-center m-3 p-3 heading">Register Now</h4>
+        <MDBCol col="4" md="6" className="bg-dark p-3">
+          <h4 className="text-center m-3 p-3 heading">Register To Quiziz</h4>
           <MDBInput
             wrapperClass="mb-4"
-            label="Name"
+            label="Enter Name"
             id="formControlLg"
             type="text"
             size="lg"
             name="name"
             value={formData.name}
             onChange={onChange}
-            className="bg-white text-danger"
+            className="bg-white text-danger mt-5"
           />
           <MDBInput
             wrapperClass="mb-4"
-            label="Email address"
+            label="Enter Email address"
             id="formControlLg"
             type="email"
             size="lg"
@@ -64,7 +64,7 @@ function Register() {
           />
           <MDBInput
             wrapperClass="mb-4"
-            label="Password"
+            label="Enter Password"
             id="formControlLg"
             type="password"
             name="password"

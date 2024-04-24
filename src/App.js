@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ProtectedRoute from "./Routes/ProtectedRoute";
 
 import DashBoard from "./AdminPanel/DashBoard";
@@ -21,6 +21,7 @@ import Instruction from "./HomePanel/Instruction";
 import Result from "./Quiz/Result";
 import Quiz from "./AdminPanel/Quiz";
 import TakeQuiz from "./Quiz/TakeQuiz";
+import Lms from "./CHATGPTPANEL/lms";
 function App() {
   return (
     <div className="App">
@@ -29,6 +30,7 @@ function App() {
         <Route path="/" element={<ProtectedRoute Component={Home} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+         <Route path="/chatgpt" element={<ProtectedRoute Component={Lms} />} />
 
         <Route path="/result" element={<ProtectedRoute Component={Result} />} />
         <Route

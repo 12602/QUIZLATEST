@@ -9,7 +9,10 @@ const SideNav = () => {
     <>
       <Sidebar
         rootStyles={{
-          fontSize: 22,
+          fontSize: 26,
+          height: "100%",
+          backgroundColor: "black",
+          color: "red",
         }}
         className="sidebar"
       >
@@ -34,6 +37,7 @@ const SideNav = () => {
             {" "}
             View All Students{" "}
           </MenuItem>
+
           <MenuItem onClick={() => navigate("/admin")}> Profile</MenuItem>
         </Menu>
       </Sidebar>

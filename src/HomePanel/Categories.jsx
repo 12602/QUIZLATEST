@@ -9,6 +9,7 @@ import {
 import Card from "./Card";
 
 const Categories = ({ categories }) => {
+  
   return (
     <div>
       <MDBRow>

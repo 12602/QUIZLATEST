@@ -5,13 +5,13 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 export const AdminContext = createContext();
-
+const URL="https://quizspring.up.railway.app/quiz";
 export const AdminState = ({ children }) => {
   const [results, setResults] = useState([]);
   const [quiz, setQuiz] = useState([]);
   const saveQuiz = async (quiz) => {
     try {
-      const { data } = await axios.post("http://localhost:8080/quiz/addQuiz", {
+      const { data } = await axios.post(`${URL}/addQuiz`, {
         quiz,
       });
       console.log(data);
@@ -23,7 +23,7 @@ export const AdminState = ({ children }) => {
   const loadResults = async (id) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/user/results/${id}`
+        `https://quizspring.up.railway.app//user/results/${id}`
       );
 
       setResults(data);
@@ -35,7 +35,7 @@ export const AdminState = ({ children }) => {
   const loadQuiz = async (cat) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/quiz/getCompleteQuiz/${cat}`
+        `${URL}/getCompleteQuiz/${cat}`
       );
       console.log(data);
       setQuiz(data);

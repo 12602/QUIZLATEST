@@ -59,7 +59,7 @@ export default function ViewQuiz() {
             <MDBRow>
               {answers?.map((i, index) => (
                 <MDBCol key={i} className="col-md-6 p-3">
-                  <MDBBtn>{i}</MDBBtn>
+                  <h6>{i}</h6>
                 </MDBCol>
               ))}
               <div className="text-center mt-3">

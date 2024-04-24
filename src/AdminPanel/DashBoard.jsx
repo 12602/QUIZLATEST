@@ -11,7 +11,9 @@ const DashBoard = () => {
         <SideNav />
       </div>
       <MDBCol className="mt-5">
-        <h1 className="text-center heading">Hello Admin</h1>
+        <h1 className="text-center heading bg-dark text-white p-3">
+          Hello Admin
+        </h1>
         <AdminProfile />
       </MDBCol>
     </div>

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 export const UserContext = createContext();
-
+const URL="https://quizspring.up.railway.app/user";
 export const UserState = ({ children }) => {
   const notify = (msg) => toast(msg);
   const navigate = useNavigate();
@@ -17,16 +17,28 @@ export const UserState = ({ children }) => {
   );
 
   const loginHandler = async (email, password) => {
+    if (email.indexOf("@") === -1 || email.size < 5) {
+      toast.warn("Email must contain @");
+      return;
+    }
+    if (password.length < 5) {
+      toast.warn("Password must be of 6 digits");
+      return;
+    }
     try {
-      const { data } = await axios.post("http://localhost:8080/user/login", {
+      const {data} = await axios.post(`${URL}/login`, {
         email,
         password,
       });
-      if (!data) {
+         
+      console.log(data);
+
+      if (!data) 
+      {
         toast.error("Incorrect email/password");
         return;
       }
-      console.log(data);
+    
       notify("Login Successfully");
       localStorage.setItem("userName", data.userName);
       localStorage.setItem("userId", data.userId);
@@ -54,7 +66,7 @@ export const UserState = ({ children }) => {
         return;
       }
 
-      const { data } = await axios.post("http://localhost:8080/user/register", {
+      const { data } = await axios.post(`${URL}/register`, {
         userName,
         email,
         password,
@@ -70,7 +82,7 @@ export const UserState = ({ children }) => {
   };
   const getAllUsers = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/user/allUsers");
+      const { data } = await axios.get(`${URL}/allUsers`);
 
       setAllUsers(data);
     } catch (error) {

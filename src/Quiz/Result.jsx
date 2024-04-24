@@ -13,7 +13,9 @@ const Result = () => {
   return (
     <div>
       {results.length > 0 && (
-        <h1 className="text-center mt-5 p-3 heading">Your Quiz Result</h1>
+        <h1 className="text-center mt-5 p-3 heading bg-dark text-white">
+          Your Quiz Result
+        </h1>
       )}
       <MDBRow>
         {results.length > 0 ? (

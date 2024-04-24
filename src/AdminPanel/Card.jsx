@@ -20,40 +20,37 @@ export default function Card({ cat }) {
   const openQuiz = (selected) => {
     navigate(`/admin/openQuiz/${selected}`);
   };
+  const image = cat?.categoryImage
+    ? cat.categoryImage
+    : "https://mdbootstrap.com/img/new/standard/nature/111.webp";
   return (
-    <MDBCol>
-      <MDBCard style={{ width: 300, height: 200 }} className="mt-3 text-center">
-        <MDBRipple
-          rippleColor="light"
-          rippleTag="div"
-          className="bg-image hover-overlay"
-        >
-          {/* <MDBCardImage
-            src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-            fluid
-            alt="..."
-            height={140}
-            width={140}
-          /> */}
-          <a>
-            <div
-              className="mask"
-              style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-            ></div>
-          </a>
-        </MDBRipple>
-        <MDBCardBody>
-          <MDBCardTitle>
-            <span>Quiz category</span>
-            <h3>{cat}</h3>
-          </MDBCardTitle>
-          <MDBCardText>
-            {/* Some quick example text to build on the card title and make up the
+    <MDBCard style={{ width: 400 }} className=" m-3 p-3">
+      <MDBRipple
+        rippleColor="light"
+        rippleTag="div"
+        className="bg-image hover-overlay"
+      >
+        <MDBCardImage src={image} alt="..." height={140} width={140} />
+        <a>
+          <div
+            className="mask"
+            style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+          ></div>
+        </a>
+      </MDBRipple>
+      <MDBCardBody>
+        <MDBCardTitle className="bg-success text-white p-3">
+          {cat.category}
+        </MDBCardTitle>
+        <MDBCardText>
+          {/* Some quick example text to build on the card title and make up the
           bulk of the card's content. */}
-            <MDBBtn onClick={() => openQuiz(cat)}>View Questions</MDBBtn>
-          </MDBCardText>
-        </MDBCardBody>
-      </MDBCard>
-    </MDBCol>
+          {cat.categoryDescription}
+        </MDBCardText>
+        <div className="text-center">
+          <MDBBtn onClick={() => openQuiz(cat?.category)}>View Quiz</MDBBtn>
+        </div>
+      </MDBCardBody>
+    </MDBCard>
   );
 }

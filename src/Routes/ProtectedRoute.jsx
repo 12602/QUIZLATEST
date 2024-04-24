@@ -14,7 +14,8 @@ const ProtectedRoute = ({ Component }) => {
   } else
     return (
       <>
-        <Navbar />
+        {/* <Navbar /> */}
+        <Navbar/>
         <Component />
       </>
     );
