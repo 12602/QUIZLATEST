@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 export const QuizContext = createContext();
 
 const OPENAI_API_KEY="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";
-const URL="https://quizspring.up.railway.app/quiz";
+const URL="https://latestquizspring-production.up.railway.app/quiz";
 const openai = new OpenAI({
   apiKey:OPENAI_API_KEY, dangerouslyAllowBrowser: true // This is the default and can be omitted
 });
