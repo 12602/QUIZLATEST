@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 export const UserContext = createContext();
-const URL="https://quizspring.up.railway.app/user";
+const URL="https://latestquizspring-production.up.railway.app/user";
 export const UserState = ({ children }) => {
   const notify = (msg) => toast(msg);
   const navigate = useNavigate();
