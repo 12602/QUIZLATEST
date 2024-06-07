@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 export const AdminContext = createContext();
-const URL="https://quizspring.up.railway.app/quiz";
+const URL="https://latestquizspring-production.up.railway.app/quiz";
 export const AdminState = ({ children }) => {
   const [results, setResults] = useState([]);
   const [quiz, setQuiz] = useState([]);
